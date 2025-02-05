@@ -67,6 +67,8 @@ function display() {
 
 function deleteData(index) {
     const tanggalTarget = savedData[index].tanggal;
+    const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus data tabungan tanggal ${formatTanggal(tanggalTarget)}?`);
+    if (!confirmDelete) return;
     savedData.splice(index, 1);
     dataWarga = dataWarga.filter((warga) => warga.tanggal !== tanggalTarget);
     
