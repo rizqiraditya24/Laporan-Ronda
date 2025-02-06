@@ -231,7 +231,7 @@ saveModal.addEventListener('click', () => {
         isDataSaved = true;
 
         // Redirect ke halaman index.html
-        window.location.href = '../index/index.html';
+        window.location.href = '../index.html';
     } else {
         alert('Tanggal atau total tabungan tidak boleh kosong!');
     }

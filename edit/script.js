@@ -167,7 +167,7 @@ btnSimpan.addEventListener('click', function () {
     // Hapus event popstate agar pengguna bisa kembali setelah data disimpan
     window.onpopstate = null;
 
-    window.location.href = '../index/index.html';
+    window.location.href = '../index.html';
 });
 
 function editData(index) {
