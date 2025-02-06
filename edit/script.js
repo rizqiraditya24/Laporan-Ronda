@@ -7,6 +7,7 @@ const form = document.getElementById('form-input');
 const btnTambah = document.getElementById('btn-tambah');
 const btnSimpan = document.getElementById('btn-simpan');
 const navHome = document.getElementById('navHome');
+const search = document.getElementById('searchInput');
 
 let editIndex = null;
 let isDataSaved = true;
@@ -112,10 +113,19 @@ function addData(event) {
     inputTabungan.value = '';
 }
 
-function displayEditData() {
+// Tambahkan event listener untuk pencarian
+search.addEventListener('input', function () {
+    displayEditData(this.value.trim().toLowerCase());
+});
+
+function displayEditData(searchQuery = '') {
     output.innerHTML = '';
 
-    if (filteredWarga.length === 0) {
+    let displayedData = filteredWarga.filter(data =>
+        data.namaWarga.toLowerCase().includes(searchQuery)
+    );
+
+    if (displayedData.length === 0) {
         const h1 = document.createElement('h1');
         h1.textContent = 'Tidak ada data warga ditemukan.';
         h1.style.textAlign = 'center';
@@ -123,7 +133,7 @@ function displayEditData() {
         return;
     }
 
-    filteredWarga.forEach((data, index) => {
+    displayedData.forEach((data, index) => {
         const listItem = document.createElement('div');
         listItem.classList.add('list');
         listItem.innerHTML = `
@@ -131,8 +141,8 @@ function displayEditData() {
                 <h3>${index + 1}. ${data.namaWarga}</h3>
                 <p>Jumlah Tabungan: ${data.tabungan}</p>
             </div>
-            <button id="editButton" onclick="editData(${index})">Edit</button>
-            <button id="deleteButton" onclick="deleteData(${index})">Delete</button>
+            <button id="editButton" onclick="editData(${filteredWarga.indexOf(data)})">Edit</button>
+            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>
         `;
 
         output.appendChild(listItem);
