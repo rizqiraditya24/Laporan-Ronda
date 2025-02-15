@@ -7,10 +7,9 @@ function saveTabungan() {
     localStorage.setItem('savedTabunganData', JSON.stringify(savedData));
 }
 
-let warga = []; // Data sementara yang akan ditambah
 let dataWarga = JSON.parse(localStorage.getItem('warga')) || [];
 function saveData() {
-    localStorage.setItem('warga', JSON.stringify(warga));
+    localStorage.setItem('warga', JSON.stringify(dataWarga));
 }
 
 // Fungsi untuk memformat tanggal
@@ -20,10 +19,10 @@ function formatTanggal(tanggal) {
         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
     ];
 
-    const date = new Date(tanggal); 
-    const hari = date.getDate(); 
-    const bulan = bulanNama[date.getMonth()]; 
-    const tahun = date.getFullYear(); 
+    const date = new Date(tanggal);
+    const hari = date.getDate();
+    const bulan = bulanNama[date.getMonth()];
+    const tahun = date.getFullYear();
 
     return `${hari} ${bulan} ${tahun}`;
 }
@@ -31,7 +30,7 @@ function formatTanggal(tanggal) {
 function display() {
     outputList.innerHTML = '';
 
-    const searchTerm = searchOutput.value.trim().toLowerCase(); 
+    const searchTerm = searchOutput.value.trim().toLowerCase();
     const sortedData = savedData.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
     // Filter data berdasarkan tanggal yang sudah diformat
@@ -67,11 +66,16 @@ function display() {
 
 function deleteData(index) {
     const tanggalTarget = savedData[index].tanggal;
-    const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus data tabungan tanggal ${formatTanggal(tanggalTarget)}?`);
+    const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus semua data tabungan dengan tanggal ${formatTanggal(tanggalTarget)}?`);
     if (!confirmDelete) return;
-    savedData.splice(index, 1);
+
+    // Hapus data di savedData dengan tanggal yang sama
+    savedData = savedData.filter((item) => item.tanggal !== tanggalTarget);
+
+    // Hapus semua data di dataWarga yang memiliki tanggal yang sama
     dataWarga = dataWarga.filter((warga) => warga.tanggal !== tanggalTarget);
-    
+
+    // Simpan kembali ke localStorage
     saveTabungan();
     saveData();
     display();
@@ -84,10 +88,9 @@ function editData(index) {
     // Simpan tanggal ke localStorage untuk digunakan di input.html
     localStorage.setItem('editTanggal', tanggalTarget);
 
-    // Redirect ke halaman input.html
-    window.location.href = '../edit/edit.html';
+    // Redirect ke halaman edit.html
+    window.location.href = 'edit/edit.html';
 }
-
 
 // Trigger pencarian ketika pengguna mengetik
 searchOutput.addEventListener('input', display);

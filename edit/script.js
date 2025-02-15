@@ -136,14 +136,14 @@ function displayEditData(searchQuery = '') {
     displayedData.forEach((data, index) => {
         const listItem = document.createElement('div');
         listItem.classList.add('list');
-        listItem.innerHTML = `
-           <div class="listText">
+        listItem.innerHTML = 
+          ` <div class="listText">
                 <h3>${index + 1}. ${data.namaWarga}</h3>
                 <p>Jumlah Tabungan: ${data.tabungan}</p>
             </div>
             <button id="editButton" onclick="editData(${filteredWarga.indexOf(data)})">Edit</button>
-            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>
-        `;
+            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>`
+        ;
 
         output.appendChild(listItem);
     });
