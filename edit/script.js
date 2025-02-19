@@ -12,6 +12,7 @@ const search = document.getElementById('searchInput');
 let editIndex = null;
 let isDataSaved = true;
 
+// Ambil data dari localStorage
 let savedData = JSON.parse(localStorage.getItem('savedTabunganData')) || [];
 function saveTabungan() {
     localStorage.setItem('savedTabunganData', JSON.stringify(savedData));
@@ -22,23 +23,10 @@ function saveData() {
     localStorage.setItem('warga', JSON.stringify(dataWarga));
 }
 
-inputTotalTabungan.textContent = 'Rp 0';
+// Filter data berdasarkan tanggal yang sedang diedit
+let filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
 
-// Validasi input hanya angka
-inputTabungan.addEventListener('input', function () {
-    this.value = this.value.replace(/[^0-9]/g, ''); // Hanya izinkan angka
-    let value = this.value;
-    let formattedValue = formatRupiah(value, 'Rp ');
-    this.value = formattedValue;
-});
-
-// Prevent spasi saat mengetik
-inputTabungan.addEventListener('keydown', function (event) {
-    if (event.key === ' ') {
-        event.preventDefault();
-    }
-});
-
+// Format angka menjadi format Rupiah
 function formatRupiah(number, prefix) {
     let numberString = number.toString().replace(/[^,\d]/g, ''),
         split = numberString.split(','),
@@ -55,19 +43,27 @@ function formatRupiah(number, prefix) {
     return prefix === undefined ? rupiah : prefix + rupiah;
 }
 
-// Filter data warga berdasarkan tanggal yang sama
-let filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
-
-// Hitung total tabungan
-function calculateTotalTabungan() {
+// Hitung total tabungan dan langsung simpan ke localStorage
+function calculateTotalTabungan(save = false) {
     let total = filteredWarga.reduce((sum, data) => {
         let numericValue = parseInt(data.tabungan.replace(/[^0-9]/g, ''), 10);
         return sum + numericValue;
     }, 0);
 
     inputTotalTabungan.textContent = formatRupiah(total, 'Rp ');
+
+    if (save) {
+        const DataIndex = savedData.findIndex((data) => data.tanggal === editTanggal);
+        if (DataIndex !== -1) {
+            savedData[DataIndex].totalTabungan = total;
+        } else {
+            savedData.push({ tanggal: editTanggal, totalTabungan: total });
+        }
+        saveTabungan();
+    }
 }
 
+// Tambah data warga
 function addData(event) {
     event.preventDefault();
 
@@ -92,32 +88,41 @@ function addData(event) {
             tanggal: editTanggal,
         };
         dataWarga.push(newData);
-        filteredWarga.push(newData);
     } else {
         dataWarga[editIndex] = {
             namaWarga: namaWarga,
             tabungan: tabungan,
             tanggal: editTanggal,
         };
-
-        filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
         editIndex = null;
     }
 
+    filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
+
     isDataSaved = false;
     saveData();
-    calculateTotalTabungan();
+    calculateTotalTabungan(true);
     displayEditData();
 
     inputNamaWarga.value = '';
     inputTabungan.value = '';
 }
 
-// Tambahkan event listener untuk pencarian
-search.addEventListener('input', function () {
-    displayEditData(this.value.trim().toLowerCase());
-});
+// Hapus data warga berdasarkan tanggal yang sama
+function deleteData(index) {
+    let deletedData = filteredWarga[index];
 
+    dataWarga = dataWarga.filter(data => !(data.namaWarga === deletedData.namaWarga && data.tanggal === editTanggal));
+
+    filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
+
+    saveData();
+    isDataSaved = false;
+    calculateTotalTabungan(true);
+    displayEditData();
+}
+
+// Tampilkan data di halaman
 function displayEditData(searchQuery = '') {
     output.innerHTML = '';
 
@@ -137,49 +142,21 @@ function displayEditData(searchQuery = '') {
         const listItem = document.createElement('div');
         listItem.classList.add('list');
         listItem.innerHTML = 
-          ` <div class="listText">
+          `<div class="listText">
                 <h3>${index + 1}. ${data.namaWarga}</h3>
                 <p>Jumlah Tabungan: ${data.tabungan}</p>
             </div>
             <button id="editButton" onclick="editData(${filteredWarga.indexOf(data)})">Edit</button>
-            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>`
-        ;
+            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>`;
 
         output.appendChild(listItem);
     });
 
-    calculateTotalTabungan();
+    calculateTotalTabungan(true);
     btnTambah.textContent = 'Tambah';
 }
 
-function deleteData(index) {
-    let deletedData = filteredWarga[index];
-
-    dataWarga = dataWarga.filter(data => data !== deletedData);
-    filteredWarga = filteredWarga.filter(data => data !== deletedData);
-
-    saveData();
-    isDataSaved = false;
-    displayEditData();
-}
-
-btnSimpan.addEventListener('click', function () {
-    let totalTabunganValue = inputTotalTabungan.textContent.replace(/[^0-9]/g, '');
-    let totalTabunganNumber = parseInt(totalTabunganValue, 10);
-
-    const DataIndex = savedData.findIndex((data) => data.tanggal === editTanggal);
-    savedData[DataIndex].totalTabungan = totalTabunganNumber;
-
-    saveTabungan();
-    alert('Total Tabungan berhasil disimpan!');
-    isDataSaved = true;
-
-    // Hapus event popstate agar pengguna bisa kembali setelah data disimpan
-    window.onpopstate = null;
-
-    window.location.href = '../index.html';
-});
-
+// Edit data warga
 function editData(index) {
     let dataToEdit = filteredWarga[index];
 
@@ -197,23 +174,22 @@ function editData(index) {
     btnTambah.textContent = 'Edit';
 }
 
-// Mencegah pengguna kembali ke halaman sebelumnya jika data belum disimpan
-window.addEventListener('popstate', function (event) {
-    if (!isDataSaved) {
-        alert('Data belum disimpan! Harap simpan data terlebih dahulu.');
-        history.pushState(null, '', location.href);
-    }
+// Fungsi untuk menyimpan data dan berpindah halaman
+btnSimpan.addEventListener('click', function () {
+    isDataSaved = true;
+    saveData();
+    saveTabungan();
+
+    alert('Data berhasil disimpan!');
+    window.location.href = '../index.html';
 });
 
-// Paksa pengguna tetap di halaman saat pertama kali dibuka
-function lockBackButton() {
-    history.pushState(null, '', location.href);
-    history.pushState(null, '', location.href);
-}
+// Tambahkan event listener untuk pencarian
+search.addEventListener('input', function () {
+    displayEditData(this.value.trim().toLowerCase());
+});
 
-lockBackButton();
-
-// Mencegah navigasi keluar sebelum data disimpan
+// Cegah navigasi sebelum data disimpan
 navHome.addEventListener('click', (event) => {
     if (!isDataSaved) {
         alert('Data belum disimpan! Harap simpan data terlebih dahulu.');
@@ -221,5 +197,24 @@ navHome.addEventListener('click', (event) => {
     }
 });
 
+// Cegah kembali sebelum data disimpan
+window.addEventListener('popstate', function (event) {
+    if (!isDataSaved) {
+        alert('Data belum disimpan! Harap simpan data terlebih dahulu.');
+        history.pushState(null, '', location.href);
+    }
+});
+
+// Kunci tombol kembali
+function lockBackButton() {
+    history.pushState(null, '', location.href);
+    history.pushState(null, '', location.href);
+}
+
+lockBackButton();
+
+// Event listener untuk form
 form.addEventListener('submit', addData);
+
+// Tampilkan data saat halaman dimuat
 displayEditData();

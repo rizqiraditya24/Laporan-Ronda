@@ -3,103 +3,232 @@
     padding: 0%;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #FA812F;
-    justify-content: space-between;
-    height: 70px;
+
+@media (min-width: 1025px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #FA812F;
+        justify-content: space-between;
+        height: 70px;
+    }
+    
+    header h2 {
+        color: white;
+        margin-left: 20px;
+    }
+    
+    header div {
+        display: flex;
+        flex-direction: row
+    }
+    
+    header a {
+        text-decoration: none;
+        color: white;
+        margin-right: 30px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    header a:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 3px;
+    }
+    
+    .navOutput {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 3px;
+    }
+    
+    .grupAtas{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+    .search {
+        margin: auto;
+        width: 50%;
+        height: 30px;
+        padding: 5px;
+        padding-inline: 40px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+        background: url('icon_search.svg') no-repeat 10px center;
+        background-size: 20px 20px;
+        margin-bottom: 40px;
+    }
+    
+    #output{
+        height: auto;
+        max-height: 500px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    #output::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .outputContent{
+        border: 1px solid #FA812F;
+        margin-inline: 30px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .outputContent button{
+        background-color: red;
+        width: 100px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 40px;
+        margin-right: 20px;
+    }
+    
+    #btnEdit{
+        background-color: #FA812F;
+    }
 }
 
-header h2 {
-    color: white;
-    margin-left: 20px;
-}
+/* Gaya untuk smartphone (layar kecil) */
+@media (max-width: 767px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #FA812F;
+        justify-content: space-between;
+        height: 70px;
+    }
+    
+    header h2 {
+        color: white;
+        margin-left: 20px;
+        font-size: 27px;
+    }
+    
+    header div {
+        display: flex;
+        flex-direction: row
+    }
+    
+    header a {
+        text-decoration: none;
+        color: white;
+        margin-right: 20px;
+        font-weight: bold;
+        font-size: 17px;
+        background-color: red;
+        padding: 6px;
+        border-radius: 5px;
+    }
+    
+    header a:hover {
+        background-color: rgb(125, 0, 0);
+    }
 
-header div {
-    display: flex;
-    flex-direction: row
-}
+    header a::before {
+        content: "";
+        display: inline-block;
+        width: 22px; /* Sesuaikan ukuran gambar */
+        height: 22px;
+        background-image: url('icon_input.svg'); /* Ganti dengan path gambar */
+        background-size: cover;
+        margin-right: 9px; /* Spasi antara ikon dan teks */
+        vertical-align: middle;
+    }
+    
+    .navOutput {
+      display: none;
+    }
+    
+    .grupAtas{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+    .search {
+        margin: auto;
+        width: 65%;
+        height: 30px;
+        padding: 5px;
+        padding-inline: 40px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+        background: url('icon_search.svg') no-repeat 10px center;
+        background-size: 20px 20px;
+        margin-bottom: 30px;
+    }
+    
+    #output{
+        height: auto;
+        max-height: 500px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    #output::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .outputContent{
+        width: 75%;
+        border: 1px solid #FA812F;
+        margin: auto;
+        padding: 18px;
+        padding-inline: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .outputContent h3{
+        font-size: 16px;
+    }
 
-header a {
-    text-decoration: none;
-    color: white;
-    margin-right: 30px;
-    font-weight: bold;
-    font-size: 18px;
-}
+    .outputContent p{
+        font-size: 12px;
+    }
 
-header a:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 3px;
-}
-
-.navOutput {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 3px;
-}
-
-.grupAtas{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
-
-.search {
-    margin: auto;
-    width: 50%;
-    height: 30px;
-    padding: 5px;
-    padding-inline: 40px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.481);
-    outline-color: #FA812F;
-    background: url('icon_search.svg') no-repeat 10px center;
-    background-size: 20px 20px;
-    margin-bottom: 40px;
-}
-
-#output{
-    height: auto;
-    max-height: 500px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-#output::-webkit-scrollbar {
-    display: none;
-}
-
-.outputContent{
-    border: 1px solid #FA812F;
-    margin-inline: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-}
-
-.outputContent button{
-    background-color: red;
-    width: 100px;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 40px;
-    margin-right: 20px;
-}
-
-#btnEdit{
-    background-color: #FA812F;
+    .outputContent button{
+        background-color: red;
+        width: 50px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    #btnEdit{
+        background-color: #FA812F;
+        margin-right: 5px;
+    }
 }

@@ -129,12 +129,10 @@ function display() {
 
     if (filteredData.length === 0 && warga.length > 0) {
         // Tampilkan gambar not-found hanya jika warga tidak kosong
-        const img = document.createElement('img');
-        img.src = '../not_found.svg';
-        img.alt = 'Tidak ditemukan';
-        img.style.width = '80%';
-        img.style.marginLeft = '60px';
-        output.appendChild(img);
+        const not_found = document.createElement('h1');
+        not_found.textContent = 'Data tidak ditemukan';
+        not_found.style.textAlign = 'center';
+        output.append(not_found);
     } else {
         filteredData.forEach((data, index) => {
             const listOutput = document.createElement('div');

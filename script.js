@@ -51,11 +51,11 @@ function display() {
         const listItem = document.createElement('div');
         listItem.classList.add('outputContent');
         listItem.innerHTML = `
-        <div class="textOutput">
+        <div>
             <h3>${index + 1}. ${formatTanggal(data.tanggal)}</h3>
             <p>Jumlah Tabungan : Rp ${parseInt(data.totalTabungan, 10).toLocaleString('id-ID')}</p>
         </div>
-        <div class="buttonOutput">
+        <div>
             <button onclick="editData(${index})" id="btnEdit">Edit</button>
             <button onclick="deleteData(${index})">Delete</button>
         </div>`;
