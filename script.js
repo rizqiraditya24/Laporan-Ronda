@@ -42,7 +42,7 @@ function display() {
     if (filteredData.length === 0) {
         const h1 = document.createElement('h1');
         h1.textContent = 'Data tidak ditemukan';
-        h1.style.textAlign = 'center';
+        h1.classList.add('notFound');
         outputList.appendChild(h1);
     }
 

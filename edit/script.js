@@ -81,6 +81,13 @@ function addData(event) {
         return;
     }
 
+    let isDuplicate = filteredWarga.some((data, index) => data.namaWarga.toLowerCase() === namaWarga.toLowerCase() && index !== editIndex);
+
+    if (isDuplicate) {
+        alert('Nama warga sudah ada dalam daftar! Harap masukkan nama yang berbeda.');
+        return;
+    }
+
     if (editIndex === null) {
         let newData = {
             namaWarga: namaWarga,

@@ -8,11 +8,12 @@
 </head>
 <body>
     <header>
-        <h2>Laporan Data Ronda</h2>
-        <div>
+        <h2>Input Data Ronda</h2>
+        <div class="nav">
             <a href="../index.html" id="navHome">Home</a>
             <a class="navInput">Input</a>
         </div>
+        <a href="../index.html" class="btnHome"><button>Home</button></a>
     </header>
 
     <div class="bodyInput">
@@ -20,11 +21,11 @@
             <form method="post" class="form-input" id="form-input">
                 <h1 class="title-input">Input Data</h1>
             
-                <label for="namaWarga" class="label-input">Nama Warga</label>
-                <input type="text" class="input" id="nama" name="namaWarga" placeholder="Masukkan nama warga...">
+                <label for="nama" class="label-input">Nama Warga</label>
+                <input type="text" class="input" id="nama" placeholder="Masukkan nama warga...">
             
-                <label for="jumlahTabungan" class="label-input">Jumlah Tabungan</label>
-                <input type="text" class="input" id="tabungan" name="jumlahTabungan" placeholder="Masukkan jumlah tabungan...">
+                <label for="tabungan" class="label-input">Jumlah Tabungan</label>
+                <input type="text" class="input" id="tabungan" placeholder="Masukkan jumlah tabungan...">
             
                 <button type="submit" class="btn-simpan" id="btn-tambah">Tambah</button>
             </form>
@@ -43,8 +44,6 @@
             <input type="text" class="search" id="searchInput" placeholder="Cari nama warga...">
         
             <div id="output"></div>
-
-           
         </div>
         
     </div>

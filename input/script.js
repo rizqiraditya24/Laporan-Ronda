@@ -83,6 +83,8 @@ function addData(event) {
     let namaWarga = inputNamaWarga.value.trim();
     let tabungan = inputTabungan.value.trim();
 
+    
+
     if (namaWarga === '') {
         alert('Nama Warga Tidak Boleh Kosong');
         return;
@@ -95,8 +97,16 @@ function addData(event) {
         return;
     }
 
+    // Cek apakah nama sudah ada dalam array warga (kecuali jika sedang dalam mode edit)
+    let isDuplicate = warga.some((data, index) => data.namaWarga.toLowerCase() === namaWarga.toLowerCase() && index !== editIndex);
+
+    if (isDuplicate) {
+        alert('Nama warga sudah ada dalam daftar! Harap masukkan nama yang berbeda.');
+        return;
+    }
+
     if (editIndex === null) {
-        // Mode tambah data baru, simpan sementara di array warga
+        // Mode tambah data baru
         let newData = {
             namaWarga: namaWarga,
             tabungan: tabungan,
@@ -161,6 +171,7 @@ function editData(index) {
     modalTanggal.value = editData.tanggal;
 
     editIndex = index;
+    inputNamaWarga.focus();
     btnTambah.textContent = 'Edit';
 }
 

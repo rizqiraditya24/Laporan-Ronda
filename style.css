@@ -4,7 +4,7 @@
 }
 
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
     header {
         width: 100%;
         display: flex;
@@ -105,6 +105,15 @@
     #btnEdit{
         background-color: #FA812F;
     }
+
+    .floating-btn {
+        display: none;
+    }
+
+    .notFound{
+        text-align: center;
+        font-size: 50px;
+    }
 }
 
 /* Gaya untuk smartphone (layar kecil) */
@@ -126,38 +135,7 @@
     }
     
     header div {
-        display: flex;
-        flex-direction: row
-    }
-    
-    header a {
-        text-decoration: none;
-        color: white;
-        margin-right: 20px;
-        font-weight: bold;
-        font-size: 17px;
-        background-color: red;
-        padding: 6px;
-        border-radius: 5px;
-    }
-    
-    header a:hover {
-        background-color: rgb(125, 0, 0);
-    }
-
-    header a::before {
-        content: "";
-        display: inline-block;
-        width: 22px; /* Sesuaikan ukuran gambar */
-        height: 22px;
-        background-image: url('icon_input.svg'); /* Ganti dengan path gambar */
-        background-size: cover;
-        margin-right: 9px; /* Spasi antara ikon dan teks */
-        vertical-align: middle;
-    }
-    
-    .navOutput {
-      display: none;
+        display: none;
     }
     
     .grupAtas{
@@ -179,6 +157,11 @@
         background: url('icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
         margin-bottom: 30px;
+    }
+
+    .notFound{
+        text-align: center;
+        font-size: 30px;
     }
     
     #output{
@@ -231,4 +214,29 @@
         background-color: #FA812F;
         margin-right: 5px;
     }
+
+    .floating-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 55px;
+        height: 55px;
+        background-color: #FA4032;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .floating-btn:hover {
+        background-color: #812b25;
+    }
+    
 }
