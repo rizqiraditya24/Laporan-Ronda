@@ -273,13 +273,13 @@
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 70px;
+        height: 8vh;
     }
     
     header h2{
         color: white;
-        padding-left: 10px;
-        font-size: 24px;
+        padding-left: 4vw;
+        font-size: 6vw;
     }
     
     .nav{
@@ -287,10 +287,10 @@
     }
 
     header button{
-        margin-right: 10px;
+        margin-right: 2.5vw;
         background-color: #FA4032;
         border: none;
-        padding: 8px;
+        padding: 8px 12px;
         color: white;
         font-weight: bold;
         border-radius: 5px;
@@ -303,12 +303,12 @@
     
     .form-input{
         width: 85%;
-        height: 240px;
+        height: 29vh;
         margin: auto;
         display: flex;
         flex-direction: column; 
-        padding: 10px;
-        margin-top: 40px;
+        padding: 4%;
+        margin-top: 3vh;
         border-radius: 10px;
         border: 2px solid #FA4032;
         
@@ -316,15 +316,15 @@
     
     .title-input{
         font-weight: bold;
-        margin-bottom:10px;
+        margin-bottom: 2vh;
         text-align: center;
     }
     
     .input{
-        margin-bottom: 20px;
-        margin-top: 3px;
-        height: 30px;
-        padding: 5px;
+        margin-bottom: 2.5vh;
+        margin-top: 0.5vh;
+        height: 20vh;
+        padding: 3%;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
@@ -335,10 +335,10 @@
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 10px;
+        padding: 3%;
         cursor: pointer;
         font-weight: bold;
-        margin-top: -10px;
+        margin-top: -1vh;
     }
     
     .btn-simpan:hover{
