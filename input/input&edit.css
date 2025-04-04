@@ -12,6 +12,7 @@
         background-color: #FA812F;
         justify-content: space-between;
         height: 70px;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2{
@@ -53,15 +54,8 @@
         flex-direction: row;
     }
     
-    .kiri{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .form-input{
-        width: 90%;
+        width: 50%;
         height: 250px;
         display: flex;
         flex-direction: column; 
@@ -150,7 +144,7 @@
     
     #output {
         height: auto;
-        max-height: 500px;
+        max-height: 530px;
         overflow-y: scroll;
         overflow-x: hidden;
         scrollbar-width: none;
@@ -268,17 +262,19 @@
 @media (max-width: 767px) {
     header{
         width: 100%;
+        position: fixed;
         display: flex;
         flex-direction: row;
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 8vh;
+        height: 8%;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2{
         color: white;
-        padding-left: 4vw;
+        padding-left: 4%;
         font-size: 6vw;
     }
     
@@ -299,11 +295,12 @@
     .bodyInput{
         display: flex;
         flex-direction: column;
+        padding-top: 9vh;
     }
     
     .form-input{
         width: 85%;
-        height: 29vh;
+        height: auto;
         margin: auto;
         display: flex;
         flex-direction: column; 
@@ -323,7 +320,7 @@
     .input{
         margin-bottom: 2.5vh;
         margin-top: 0.5vh;
-        height: 20vh;
+        height: 3vh;
         padding: 3%;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
@@ -373,6 +370,7 @@
     .grupOutput{
         display: flex;
         flex-direction: column;
+        padding-bottom: 10vh;
     }
     
     .search{
@@ -392,17 +390,8 @@
     
     #output {
         height: auto;
-        max-height: 295px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
         width: 90%;
         margin-inline: auto;
-    }
-    
-    #output::-webkit-scrollbar {
-        display: none;
     }
     
     .list{
@@ -466,7 +455,7 @@
         background-color: white;
         padding: 20px;
         border-radius: 8px;
-        width: 370px;
+        width: 60%;
         display: flex;
         flex-direction: column;
     }

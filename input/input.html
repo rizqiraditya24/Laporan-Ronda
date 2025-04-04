@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="input&edit.css">
     <title>Input Data Ronda</title>
 </head>
 <body>
@@ -17,7 +17,6 @@
     </header>
 
     <div class="bodyInput">
-        <div class="kiri">
             <form method="post" class="form-input" id="form-input">
                 <h1 class="title-input">Input Data</h1>
             
@@ -30,6 +29,13 @@
                 <button type="submit" class="btn-simpan" id="btn-tambah">Tambah</button>
             </form>
 
+
+            <div class="grupOutput">
+                <input type="text" class="search" id="searchInput" placeholder="Cari nama warga...">
+            
+                <div id="output"></div>
+            </div>
+
             <div class="totalTabungan">
                 <div>
                     <p>Total Tabungan</p>
@@ -37,14 +43,6 @@
                 </div>
                 <button id="btn-simpan">Simpan</button>
             </div>
-        </div>
-        
-        
-        <div class="grupOutput">
-            <input type="text" class="search" id="searchInput" placeholder="Cari nama warga...">
-        
-            <div id="output"></div>
-        </div>
         
     </div>
     

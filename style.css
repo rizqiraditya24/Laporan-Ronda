@@ -13,6 +13,7 @@
         background-color: #FA812F;
         justify-content: space-between;
         height: 70px;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2 {
@@ -49,7 +50,7 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
+        margin-top: 50px;
     }
     
     .search {
@@ -63,7 +64,7 @@
         outline-color: #FA812F;
         background: url('icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     
     #output{
@@ -120,12 +121,15 @@
 @media (max-width: 767px) {
     header {
         width: 100%;
+        position: fixed;
+        top: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 70px;
+        height: 65px;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2 {
@@ -142,7 +146,7 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
+        margin-top: 105px;
     }
     
     .search {
@@ -156,7 +160,7 @@
         outline-color: #FA812F;
         background: url('icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .notFound{
@@ -166,15 +170,6 @@
     
     #output{
         height: auto;
-        max-height: 500px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    
-    #output::-webkit-scrollbar {
-        display: none;
     }
     
     .outputContent{
