@@ -101,7 +101,7 @@
         position: fixed;
         bottom: 0;
         left: 30px;
-        width: 45%;
+        width: 47%;
         display: flex;
         flex-direction: row;
         background-color: #FA812F;
@@ -268,14 +268,14 @@
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 8%;
+        height: 8vh;
         box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2{
         color: white;
         padding-left: 4%;
-        font-size: 6vw;
+        font-size: 6.5vw;
     }
     
     .nav{
@@ -304,24 +304,28 @@
         margin: auto;
         display: flex;
         flex-direction: column; 
-        padding: 4%;
+        padding: 3%;
         margin-top: 3vh;
         border-radius: 10px;
         border: 2px solid #FA4032;
-        
     }
     
     .title-input{
         font-weight: bold;
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
+        font-size: 160%;
         text-align: center;
     }
     
+    .label-input{
+        font-size: 80%;
+    }
+
     .input{
-        margin-bottom: 2.5vh;
+        margin-bottom: 2vh;
         margin-top: 0.5vh;
-        height: 3vh;
-        padding: 3%;
+        height: 2.5vh;
+        padding: 2.5%;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
@@ -332,7 +336,7 @@
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 3%;
+        padding: 2.5%;
         cursor: pointer;
         font-weight: bold;
         margin-top: -1vh;
@@ -345,26 +349,34 @@
     .totalTabungan {
         position: fixed;
         bottom: 0;
-        left: 0px;
+        left: 0;
         width: 100%;
         display: flex;
         flex-direction: row;
         background-color: #FA812F;
-        padding: 15px;
+        padding: 3%;
         justify-content: space-between;
         align-items: center;
     }
     
     .totalTabungan button{
-        width: 80px;
-        height: 45px;
+        width: 20vw;
+        height: 5vh;
         color: white;
         background-color: #FA4032;
         border: none;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 25px;
+        margin-right: 6vw;
+    }
+
+    .totalTabungan h1{
+        font-size: 170%;
+    }
+
+    .totalTabungan p{
+        font-size: 80%;
     }
 
     .grupOutput{
@@ -374,18 +386,17 @@
     }
     
     .search{
-        width: 70%;
-        height: 30px;
-        padding: 5px;
-        padding-inline: 40px;
+        width: 68%;
+        height: 5vh;
+        padding-inline: 11vw;
         border-radius: 5px;
         margin-inline: auto;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
         background: url('..//icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin-bottom: 2vh;
+        margin-top: 3vh;
     }
     
     #output {
@@ -395,13 +406,13 @@
     }
     
     .list{
-        /* width: 93%; */
         display: flex;
         flex-direction: row;
         border: 1px solid #FA812F;
-        padding: 15px;
+        padding: 4.5%;
         border-radius: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
+        align-items: center;
     }
     
     .listText{
@@ -409,33 +420,34 @@
     }
 
     .listText h3{
-        font-size: 20px;
+        font-size: 80%;
+        margin-bottom: 0.5vh;
     }
 
     .listText p{
-        font-size: 10px;
+        font-size: 65%;
     }
     
-    #editButton{
-        width: 50px;
-        background-color: #FA812F;
-        margin-right: 10px;
-        border: none;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        cursor: pointer;
+    .btnContainer{
+        display: flex;
+        flex-direction: row;
     }
-    
-    #deleteButton {
-        width: 50px;
+
+    .btnContainer button{
+        width: 14vw;
+        height: 4.5vh;
         background-color: red;
         border: none;
         color: white;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 13px;
+        font-size: 80%;
+    }
+
+    #editButton{
+        background-color: #FA812F;
+        margin-right: 3vw;
     }
     
     /* Modal styling */
@@ -467,12 +479,13 @@
     }
     
     .modal-content input {
-        margin-top: 3px;
+        width: 95%;
+        margin-top: 5px;
         height: 30px;
         padding: 5px;
         border: 1px solid rgba(0, 0, 0, 0.421);
         outline-color: #FA812F;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         border-radius: 5px;
     }
     

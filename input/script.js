@@ -153,8 +153,10 @@ function display() {
                     <h3>${index + 1}. ${data.namaWarga}</h3>
                     <p>Jumlah Tabungan: ${data.tabungan}</p>
                 </div>
-                <button id="editButton" onclick="editData(${index})" >Edit</button>
-                <button id="deleteButton" onclick="deleteData(${index})">Delete</button>`
+                <div class="btnContainer">
+                    <button id="editButton" onclick="editData(${index})" >Edit</button>
+                    <button id="deleteButton" onclick="deleteData(${index})">Delete</button>
+                </div>`
             ;
 
             output.append(listOutput);

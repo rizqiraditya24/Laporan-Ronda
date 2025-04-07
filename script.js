@@ -55,7 +55,7 @@ function display() {
             <h3>${index + 1}. ${formatTanggal(data.tanggal)}</h3>
             <p>Jumlah Tabungan : Rp ${parseInt(data.totalTabungan, 10).toLocaleString('id-ID')}</p>
         </div>
-        <div>
+        <div id="btnContainer">
             <button onclick="editData(${index})" id="btnEdit">Edit</button>
             <button onclick="deleteData(${index})">Delete</button>
         </div>`;

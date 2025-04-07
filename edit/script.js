@@ -26,6 +26,21 @@ function saveData() {
 // Filter data berdasarkan tanggal yang sedang diedit
 let filteredWarga = dataWarga.filter((data) => data.tanggal === editTanggal);
 
+// Validasi input hanya angka
+inputTabungan.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, ''); // Hanya izinkan angka
+    let value = this.value;
+    let formattedValue = formatRupiah(value, 'Rp ');
+    this.value = formattedValue;
+});
+
+// Prevent spasi saat mengetik
+inputTabungan.addEventListener('keydown', function (event) {
+    if (event.key === ' ') {
+        event.preventDefault();
+    }
+});
+
 // Format angka menjadi format Rupiah
 function formatRupiah(number, prefix) {
     let numberString = number.toString().replace(/[^,\d]/g, ''),
@@ -153,8 +168,11 @@ function displayEditData(searchQuery = '') {
                 <h3>${index + 1}. ${data.namaWarga}</h3>
                 <p>Jumlah Tabungan: ${data.tabungan}</p>
             </div>
-            <button id="editButton" onclick="editData(${filteredWarga.indexOf(data)})">Edit</button>
-            <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>`;
+            <div class="btnContainer">
+                <button id="editButton" onclick="editData(${filteredWarga.indexOf(data)})">Edit</button>
+                <button id="deleteButton" onclick="deleteData(${filteredWarga.indexOf(data)})">Delete</button>
+            </div>
+           `;
 
         output.appendChild(listItem);
     });
