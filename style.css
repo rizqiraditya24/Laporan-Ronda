@@ -60,7 +60,7 @@ body{
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
-        background: url('icon_search.svg') no-repeat 10px center;
+        background: url('img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
         margin-bottom: 20px;
         margin-top: 50px;
@@ -90,21 +90,29 @@ body{
         flex-direction: row;
     }
     
+    #btnContainer button img {
+        width: 30%;
+    }
+
     .outputContent button{
         background-color: red;
-        width: 100px;
+        width: 90px;
         border: none;
         color: white;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        height: 40px;
+        height: 45px;
         margin-right: 20px;
         font-size: medium;
     }
     
     #btnEdit{
         background-color: #FA812F;
+    }
+
+    #btnView{
+        background-color: #FAB12F;
     }
 
     .floating-btn {
@@ -152,7 +160,7 @@ body{
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
-        background: url('icon_search.svg') no-repeat 10px center;
+        background: url('img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
         margin-bottom: 3vh;
         margin-top: 13vh;
@@ -193,21 +201,30 @@ body{
         flex-direction: row;
     }
 
+    #btnContainer button img {
+        width: 60%;
+    }
+
     .outputContent button{
         background-color: red;
-        width: 13vw;
+        width: 8vw;
+        height: 4vh;
         border: none;
         color: white;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        height: 5vh;
         font-size: 80%;
+        margin-right: 2vw;
     }
     
     #btnEdit{
         background-color: #FA812F;
-        margin-right: 3vw;
+    }
+
+
+    #btnView{
+        background-color: #FAB12F;
     }
 
     .floating-btn {

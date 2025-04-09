@@ -137,7 +137,7 @@
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
-        background: url('..//icon_search.svg') no-repeat 10px center;
+        background: url('/img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
         margin-bottom: 20px;
     }
@@ -169,25 +169,26 @@
         width: 75%;
     }
     
-    #editButton{
-        width: 70px;
-        background-color: #FA812F;
-        margin-right: 20px;
-        border: none;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        cursor: pointer;
+    .btnContainer{
+        display: flex;
+        flex-direction: row;
     }
-    
-    #deleteButton {
-        width: 70px;
+
+    .btnContainer button{
+        width: 80px;
+        height: 40px;
         background-color: red;
         border: none;
         color: white;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
+        font-size: medium;
+    }
+
+    #editButton{
+        background-color: #FA812F;
+        margin-right: 10px;
     }
     
     /* Modal styling */
@@ -393,7 +394,7 @@
         margin-inline: auto;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
-        background: url('..//icon_search.svg') no-repeat 10px center;
+        background: url('/img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
         margin-bottom: 2vh;
         margin-top: 3vh;

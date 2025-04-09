@@ -56,12 +56,21 @@ function display() {
             <p>Jumlah Tabungan : Rp ${parseInt(data.totalTabungan, 10).toLocaleString('id-ID')}</p>
         </div>
         <div id="btnContainer">
-            <button onclick="editData(${index})" id="btnEdit">Edit</button>
-            <button onclick="deleteData(${index})">Delete</button>
-        </div>`;
-        
+            <button onclick="editData(${index})" id="btnEdit">
+                <img src="img/icon_edit.svg" alt="Edit">
+            </button>
+
+            <button onclick="deleteData(${index})">
+                <img src="img/icon_delete.svg" alt="Delete">
+            </button>
+            
+            <button onclick="viewDetail('${data.tanggal}')" id="btnView">
+                <img src="img/icon_detail.svg" alt="Detail">
+            </button>
+        </div>`;    
+    
         outputList.appendChild(listItem);
-    });
+    });    
 }
 
 function deleteData(index) {
@@ -91,6 +100,12 @@ function editData(index) {
     // Redirect ke halaman edit.html
     window.location.href = 'edit/edit.html';
 }
+
+function viewDetail(tanggal) {
+    localStorage.setItem('detailTanggal', tanggal);
+    window.location.href = 'detail/detail.html';
+}
+
 
 // Trigger pencarian ketika pengguna mengetik
 searchOutput.addEventListener('input', display);

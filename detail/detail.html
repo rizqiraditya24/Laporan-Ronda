@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tabungan</title>
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <header>
+        <h2>Input Data Ronda</h2>
+        <div class="nav">
+            <a href="../index.html" id="navHome">Home</a>
+            <a class="navInput">Detail</a>
+        </div>
+        <a href="../index.html" class="btnHome"><button>Home</button></a>
+    </header>
+
+    <div class="container" id="container">
+        <h1>Laporan Ronda</h1>
+        <div class="tanggal">
+            <p id="tanggalTitle"></p>
+        </div>
+        <hr class="batasAtas">
+        <div id="dataContainer"></div>
+        <hr class="batasBawah">
+        <div class="totalTabunganContainer">
+            <h2>Total tabungan</h2>
+            <h2 id="totalTabungan"></h2>
+        </div>
+    </div>
+
+    <button class="btnDownload" onclick="downloadGambar()">Download Gambar</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="detail.js"></script>
+</body>
+</html>
