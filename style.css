@@ -51,10 +51,18 @@ body{
         text-decoration-thickness: 3px;
     }
     
+    .atas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 20px;
+    }
+    
     .search {
-        margin: auto;
-        width: 50%;
-        height: 30px;
+        width: 500px;
+        height: 35px;
         padding: 5px;
         padding-inline: 40px;
         border-radius: 5px;
@@ -62,12 +70,21 @@ body{
         outline-color: #FA812F;
         background: url('img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 20px;
-        margin-top: 50px;
+    }
+    
+    #filterBulan {
+        width: 150px;
+        height: 45px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+        background-color: white;
     }
     
     #output{
         height: auto;
+        margin-top: 30px;
         max-height: 540px;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -150,20 +167,38 @@ body{
         display: none;
     }
     
+    .atas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 13vh;
+        margin-bottom: 3vh;
+        gap: 2vw;
+    }
+    
     .search {
-        margin: auto;
-        width: 75%;
-        height: 4.5vh;
-        padding: 0.5vh;
-        padding-left: 11vw;
-        padding-right: 2vw;
+        width: 45vw;
+        height: 5vh;
+        padding: 5px;
+        padding-inline: 10vw;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
         background: url('img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 3vh;
-        margin-top: 13vh;
+        font-size: 70%;
+    }
+    
+    #filterBulan {
+        width: 20vw;
+        height: 6.5vh;
+        font-size: 65%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+        background-color: white;
     }
 
     .notFound{

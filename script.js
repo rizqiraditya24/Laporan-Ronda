@@ -1,7 +1,7 @@
 const outputList = document.getElementById('output');
 const searchOutput = document.getElementById('search');
+const filterBulan = document.getElementById('filterBulan');
 
-// Ambil data dari localStorage
 let savedData = JSON.parse(localStorage.getItem('savedTabunganData')) || [];
 function saveTabungan() {
     localStorage.setItem('savedTabunganData', JSON.stringify(savedData));
@@ -12,7 +12,6 @@ function saveData() {
     localStorage.setItem('warga', JSON.stringify(dataWarga));
 }
 
-// Fungsi untuk memformat tanggal
 function formatTanggal(tanggal) {
     const bulanNama = [
         "Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -31,12 +30,18 @@ function display() {
     outputList.innerHTML = '';
 
     const searchTerm = searchOutput.value.trim().toLowerCase();
+    const selectedBulan = filterBulan.value;
+
     const sortedData = savedData.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
-    // Filter data berdasarkan tanggal yang sudah diformat
     const filteredData = sortedData.filter((data) => {
         const formattedDate = formatTanggal(data.tanggal).toLowerCase();
-        return formattedDate.includes(searchTerm);
+        const bulanData = new Date(data.tanggal).getMonth();
+
+        const isSearchMatch = formattedDate.includes(searchTerm);
+        const isBulanMatch = selectedBulan === "" || bulanData == selectedBulan;
+
+        return isSearchMatch && isBulanMatch;
     });
 
     if (filteredData.length === 0) {
@@ -46,7 +51,6 @@ function display() {
         outputList.appendChild(h1);
     }
 
-    // Tampilkan data hasil filter
     filteredData.forEach((data, index) => {
         const listItem = document.createElement('div');
         listItem.classList.add('outputContent');
@@ -63,14 +67,14 @@ function display() {
             <button onclick="deleteData(${index})">
                 <img src="img/icon_delete.svg" alt="Delete">
             </button>
-            
+
             <button onclick="viewDetail('${data.tanggal}')" id="btnView">
                 <img src="img/icon_detail.svg" alt="Detail">
             </button>
         </div>`;    
-    
+
         outputList.appendChild(listItem);
-    });    
+    });
 }
 
 function deleteData(index) {
@@ -78,26 +82,17 @@ function deleteData(index) {
     const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus semua data tabungan dengan tanggal ${formatTanggal(tanggalTarget)}?`);
     if (!confirmDelete) return;
 
-    // Hapus data di savedData dengan tanggal yang sama
     savedData = savedData.filter((item) => item.tanggal !== tanggalTarget);
-
-    // Hapus semua data di dataWarga yang memiliki tanggal yang sama
     dataWarga = dataWarga.filter((warga) => warga.tanggal !== tanggalTarget);
 
-    // Simpan kembali ke localStorage
     saveTabungan();
     saveData();
     display();
 }
 
 function editData(index) {
-    // Ambil tanggal dari data yang dipilih
     const tanggalTarget = savedData[index].tanggal;
-
-    // Simpan tanggal ke localStorage untuk digunakan di input.html
     localStorage.setItem('editTanggal', tanggalTarget);
-
-    // Redirect ke halaman edit.html
     window.location.href = 'edit/edit.html';
 }
 
@@ -106,7 +101,7 @@ function viewDetail(tanggal) {
     window.location.href = 'detail/detail.html';
 }
 
-
-// Trigger pencarian ketika pengguna mengetik
 searchOutput.addEventListener('input', display);
+filterBulan.addEventListener('change', display);
+
 display();
