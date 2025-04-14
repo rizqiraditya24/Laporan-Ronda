@@ -9,7 +9,7 @@ body{
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     header {
         width: 100%;
         display: flex;
@@ -23,12 +23,45 @@ body{
     
     header h2 {
         color: white;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     
     header div {
         display: flex;
-        flex-direction: row
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header div img {
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        background-color: white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 5px;
+        padding: 10px;
+        transition: background-color 0.2s;
+    }
+    
+    .dropdown-content a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        padding: 5px;
+    }
+    
+    .dropdown-content:hover {
+        background-color: #f1f1f1;
+        text-decoration: none;
     }
     
     header a {
@@ -143,7 +176,7 @@ body{
 }
 
 /* Gaya untuk smartphone (layar kecil) */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     header {
         width: 100%;
         position: fixed;
@@ -159,12 +192,50 @@ body{
     
     header h2 {
         color: white;
-        margin-left: 5vw;
-        font-size: 7vw;
+        margin-left: 2vw;
+        font-size: 135%;
     }
     
-    header div {
+    .nav {
         display: none;
+    }
+
+    header div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header div img {
+        width: 10%;
+        height: 10%;
+        margin-left: 3vw;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        background-color: white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 5px;
+        padding: 3%;
+        transition: background-color 0.2s;
+    }
+    
+    .dropdown-content a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        padding: 5px;
+    }
+    
+    .dropdown-content:hover {
+        background-color: #f1f1f1;
+        text-decoration: none;
     }
     
     .atas {
@@ -179,9 +250,9 @@ body{
     
     .search {
         width: 45vw;
-        height: 5vh;
-        padding: 5px;
-        padding-inline: 10vw;
+        height: 4vh;
+        padding: 2%;
+        padding-inline: 12vw;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
@@ -192,8 +263,8 @@ body{
     
     #filterBulan {
         width: 20vw;
-        height: 6.5vh;
-        font-size: 65%;
+        height: 6vh;
+        font-size: 75%;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
@@ -203,7 +274,7 @@ body{
 
     .notFound{
         text-align: center;
-        font-size: 210%;
+        font-size: 200%;
     }
     
     #output{

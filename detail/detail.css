@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
     header{
         width: 100%;
@@ -137,7 +137,7 @@ body {
 
 
 /* Tampilan hp */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     header{
         width: 100%;

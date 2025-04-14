@@ -3,7 +3,7 @@
     padding: 0%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     header{
         width: 100%;
         display: flex;
@@ -260,7 +260,7 @@
 }
 
 /* Gaya untuk smartphone (layar kecil) */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     header{
         width: 100%;
         position: fixed;

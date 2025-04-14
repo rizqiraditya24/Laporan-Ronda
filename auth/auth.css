@@ -11,62 +11,152 @@ body{
     height: 100vh;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #FA812F;
-    justify-content: space-between;
-    height: 70px;
-    box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
+@media (min-width: 1024px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #FA812F;
+        justify-content: space-between;
+        height: 75px;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
+    }
+    
+    header h2 {
+        color: white;
+        margin-left: 20px;
+        font-size: 30px;
+    }
+
+    header button{
+        margin-right: 2vw;
+        background-color: #FA4032;
+        border: none;
+        padding: 15px;
+        padding-inline: 20px;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor : pointer;
+    }
+    
+    form{
+        margin: auto;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    form h1 {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    
+    form label{
+        margin-bottom: 2px;
+    }
+    
+    form input{
+        height: 25px;
+        margin-bottom: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+    }
+    
+    .saveButton{
+        background-color: #FA812F;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .saveButton:hover{
+        background-color: #fca267;
+        transform: all ease 0.3s;
+    }
 }
 
-header h2 {
-    color: white;
-    margin-left: 20px;
-}
+@media (max-width: 1024px) {
+    header {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #FA812F;
+        justify-content: space-between;
+        height: 9vh;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
+    }
+    
+    header h2 {
+        color: white;
+        margin-left: 2vh;
+        font-size: 130%;
+    }
 
-form{
-    margin: auto;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-}
-
-form h1 {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-form label{
-    margin-bottom: 2px;
-}
-
-form input{
-    height: 25px;
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.481);
-    outline-color: #FA812F;
-}
-
-.saveButton{
-    background-color: #FA812F;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.saveButton:hover{
-    background-color: #fca267;
-    transform: all ease 0.3s;
+    header button{
+        margin-right: 2.5vw;
+        background-color: #FA4032;
+        border: none;
+        padding: 8px 12px;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    
+    form{
+        margin: auto;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 5%;
+        border-radius: 10px;
+    }
+    
+    form h1 {
+        text-align: left;
+        font-size: 220%;
+        margin-bottom: 2vh;
+    }
+    
+    form label{
+        margin-bottom: 0.5vh;
+    }
+    
+    form input{
+        height: 4vh;
+        margin-bottom: 2vh;
+        padding: 2.5%;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.481);
+        outline-color: #FA812F;
+    }
+    
+    .saveButton{
+        background-color: #FA812F;
+        color: white;
+        border: none;
+        padding: 4%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 2vh;
+        font-size: 100%;
+    }
+    
+    .saveButton:hover{
+        background-color: #fca267;
+        transform: all ease 0.3s;
+    }
 }

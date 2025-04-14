@@ -1,10 +1,13 @@
 // Mengambil data user dari localStorage atau membuat array kosong jika belum ada
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-
 // Fungsi untuk menyimpan data ke localStorage
 function saveUsers() {
     localStorage.setItem('users', JSON.stringify(users));
+}
+
+function saveLoggedInUser(user) {
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
 }
 
 // Fungsi untuk registrasi user baru
@@ -21,21 +24,24 @@ function registerUser(event) {
 
     // Cek apakah username sudah digunakan
     if (users.find(user => user.username === usernameRegis)) {
-        alert('Username sudah terdaftar, gunakan username lain!');
+        alert('Username sudah terdaftar, silahkan login!');
         return;
     }
 
     // Tambah user baru ke dalam array
-    users.push({ username: usernameRegis, password: passwordRegis });
+    const newUser = { username: usernameRegis, password: passwordRegis };
+    users.push(newUser);
     saveUsers();
+    saveLoggedInUser(newUser); // Simpan user yang sedang login
 
     alert('Registrasi berhasil!');
     document.getElementById('usernameRegis').value = '';
     document.getElementById('passwordRegis').value = '';
 
-    // Redirect ke halaman index
+    // Redirect ke halaman home
     window.location.href = '/home/home.html';
 }
+
 
 // Fungsi untuk login
 function loginUser(event) {
@@ -54,7 +60,7 @@ function loginUser(event) {
         return;
     }
 
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    saveLoggedInUser(user);
     alert("Login berhasil!");
     window.location.href = "/home/home.html";
 }
