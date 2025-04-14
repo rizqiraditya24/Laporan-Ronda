@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FA812F;
+    justify-content: space-between;
+    height: 70px;
+    box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
+}
+
+header h2 {
+    color: white;
+    margin-left: 20px;
+}
+
+form{
+    margin: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+form h1 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+form label{
+    margin-bottom: 2px;
+}
+
+form input{
+    height: 25px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.481);
+    outline-color: #FA812F;
+}
+
+.saveButton{
+    background-color: #FA812F;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.saveButton:hover{
+    background-color: #fca267;
+    transform: all ease 0.3s;
+}

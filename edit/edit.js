@@ -206,7 +206,7 @@ btnSimpan.addEventListener('click', function () {
     saveTabungan();
 
     alert('Data berhasil disimpan!');
-    window.location.href = '../index.html';
+    window.location.href = '/home/home.html';
 });
 
 // Tambahkan event listener untuk pencarian

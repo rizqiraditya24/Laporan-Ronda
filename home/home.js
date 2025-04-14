@@ -2,6 +2,8 @@ const outputList = document.getElementById('output');
 const searchOutput = document.getElementById('search');
 const filterBulan = document.getElementById('filterBulan');
 
+let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')) || [];
+
 let savedData = JSON.parse(localStorage.getItem('savedTabunganData')) || [];
 function saveTabungan() {
     localStorage.setItem('savedTabunganData', JSON.stringify(savedData));
@@ -41,7 +43,9 @@ function display() {
         const isSearchMatch = formattedDate.includes(searchTerm);
         const isBulanMatch = selectedBulan === "" || bulanData == selectedBulan;
 
-        return isSearchMatch && isBulanMatch;
+        const isUserMatch = data.username === loggedInUser.username; // Filter berdasarkan username login
+
+        return isSearchMatch && isBulanMatch && isUserMatch;
     });
 
     if (filteredData.length === 0) {
@@ -61,21 +65,22 @@ function display() {
         </div>
         <div id="btnContainer">
             <button onclick="editData(${index})" id="btnEdit">
-                <img src="img/icon_edit.svg" alt="Edit">
+                <img src="/img/icon_edit.svg" alt="Edit">
             </button>
 
             <button onclick="deleteData(${index})">
-                <img src="img/icon_delete.svg" alt="Delete">
+                <img src="/img/icon_delete.svg" alt="Delete">
             </button>
 
             <button onclick="viewDetail('${data.tanggal}')" id="btnView">
-                <img src="img/icon_detail.svg" alt="Detail">
+                <img src="/img/icon_detail.svg" alt="Detail">
             </button>
         </div>`;    
 
         outputList.appendChild(listItem);
     });
 }
+
 
 function deleteData(index) {
     const tanggalTarget = savedData[index].tanggal;
@@ -93,12 +98,12 @@ function deleteData(index) {
 function editData(index) {
     const tanggalTarget = savedData[index].tanggal;
     localStorage.setItem('editTanggal', tanggalTarget);
-    window.location.href = 'edit/edit.html';
+    window.location.href = '/edit/edit.html';
 }
 
 function viewDetail(tanggal) {
     localStorage.setItem('detailTanggal', tanggal);
-    window.location.href = 'detail/detail.html';
+    window.location.href = '/detail/detail.html';
 }
 
 searchOutput.addEventListener('input', display);

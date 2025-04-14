@@ -15,6 +15,7 @@ const navHome = document.getElementById('navHome');
 let editIndex = null;
 let isDataSaved = true;
 
+let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')) || [];
 let dataWarga = JSON.parse(localStorage.getItem('warga')) || [];
 let warga = []; // Data sementara yang akan ditambah
 let savedData = JSON.parse(localStorage.getItem('savedTabunganData')) || [];
@@ -30,7 +31,6 @@ inputTotalTabungan.textContent = 'Rp 0';
 function saveTabungan() {
     localStorage.setItem('savedTabunganData', JSON.stringify(savedData));
 }
-
 
 // Validasi input hanya angka
 inputTabungan.addEventListener('input', function () {
@@ -106,20 +106,18 @@ function addData(event) {
     }
 
     if (editIndex === null) {
-        // Mode tambah data baru
         let newData = {
             namaWarga: namaWarga,
             tabungan: tabungan,
         };
         warga.push(newData);
     } else {
-        // Mode edit data
         warga[editIndex] = {
             namaWarga: namaWarga,
             tabungan: tabungan,
         };
         editIndex = null;
-    }
+    }    
 
     isDataSaved = false;
     calculateTotalTabungan();
@@ -202,19 +200,20 @@ saveModal.addEventListener('click', () => {
     const tanggalValue = modalTanggal.value;
     const savedTotal = inputTotalTabungan.textContent;
 
-    // Tambahkan validasi: pastikan ada data yang diinputkan
     if (warga.length === 0) {
         alert('Tidak ada data warga yang diinputkan! Harap tambahkan data sebelum menyimpan.');
-        return; // Hentikan proses penyimpanan
+        return;
     }
 
     if (tanggalValue && savedTotal) {
-        // Periksa apakah tanggal sudah ada di savedData
-        const isDateExists = savedData.some((data) => data.tanggal === tanggalValue);
+        // Periksa apakah tanggal sudah ada DAN username sama
+        const isDateExistsForUser = savedData.some((data) =>
+            data.tanggal === tanggalValue && data.username === loggedInUser.username
+        );
 
-        if (isDateExists) {
-            alert(`Data dengan tanggal ${tanggalValue} sudah ada! Silakan pilih tanggal lain.`);
-            return; // Hentikan proses penyimpanan
+        if (isDateExistsForUser) {
+            alert(`Data dengan tanggal ${tanggalValue} sudah ada untuk pengguna ini! Silakan pilih tanggal lain.`);
+            return;
         }
 
         // Tambahkan tanggal ke semua data di array warga
@@ -229,11 +228,12 @@ saveModal.addEventListener('click', () => {
             ...savedData,
             {
                 tanggal: tanggalValue,
-                totalTabungan: savedTotal.replace(/[^0-9]/g, ''), // Simpan total sebagai angka murni
+                totalTabungan: savedTotal.replace(/[^0-9]/g, ''),
+                username: loggedInUser.username,
             }
         ];
 
-        // Simpan data gabungan ke localStorage
+        // Simpan ke localStorage
         localStorage.setItem('warga', JSON.stringify(updatedWarga));
         localStorage.setItem('savedTabunganData', JSON.stringify(updatedSavedData));
 
@@ -241,12 +241,12 @@ saveModal.addEventListener('click', () => {
         modal.style.display = 'none';
         isDataSaved = true;
 
-        // Redirect ke halaman index.html
-        window.location.href = '../index.html';
+        window.location.href = '/home/home.html';
     } else {
         alert('Tanggal atau total tabungan tidak boleh kosong!');
     }
 });
+
 
 
 window.addEventListener('beforeunload', (event) => {
