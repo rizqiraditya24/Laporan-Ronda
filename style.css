@@ -11,6 +11,12 @@
     justify-content: center;
 }
 
+.isi button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
 @media (min-width: 1024px) {
     header {
         width: 100%;
@@ -19,6 +25,7 @@
         color: white;
         display: flex;
         align-items: center;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
 
     header h1 {
@@ -53,12 +60,6 @@
         color: #FA812F;
     }
 
-    .isi button:hover {
-        opacity: 0.9;
-        transform: scale(1.05);
-        transition: all 0.3s ease;
-    }
-
 }
 
 @media (max-width: 1024px) {
@@ -69,6 +70,7 @@
         color: white;
         display: flex;
         align-items: center;
+        box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
 
     header h1 {
@@ -112,10 +114,5 @@
         border: 2px solid #FA812F;
         color: #FA812F;
     }
-
-    .isi button:hover {
-        opacity: 0.9;
-        transform: scale(1.05);
-        transition: all 0.3s ease;
-    }
+   
 }

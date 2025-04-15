@@ -3,6 +3,35 @@
     padding: 0%;
 }
 
+.btn-simpan:hover{
+    background-color: #f16304;
+}
+
+.btnContainer button:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background-color: rgb(228, 2, 2);
+}
+
+#editButton:hover{
+    background-color: #ee5f00;
+}
+
+.totalTabungan button:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(228, 2, 2);
+}
+
+#closeModal:hover{
+    transition: all 0.3s ease;
+    background-color: #ee5f00;
+}
+
+#saveModal:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(228, 2, 2);
+}
+
 @media (min-width: 1024px) {
     header{
         width: 100%;
@@ -93,10 +122,6 @@
         margin-top: -10px;
     }
     
-    .btn-simpan:hover{
-        background-color: #f16304;
-    }
-    
     .totalTabungan {
         position: fixed;
         bottom: 0;
@@ -113,8 +138,8 @@
     }
     
     .totalTabungan button{
-        width: 80px;
-        height: 45px;
+        width: 82px;
+        height: 48px;
         color: white;
         background-color: #FA4032;
         border: none;
@@ -292,6 +317,12 @@
         font-weight: bold;
         border-radius: 5px;
     }
+
+    header button:hover{
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+        background-color: rgb(228, 2, 2);
+    }
     
     .bodyInput{
         display: flex;
@@ -343,9 +374,7 @@
         margin-top: -1vh;
     }
     
-    .btn-simpan:hover{
-        background-color: #f16304;
-    }
+    
     
     .totalTabungan {
         position: fixed;

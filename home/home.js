@@ -76,7 +76,7 @@ function display() {
             </button>
 
             <button onclick="viewDetail('${data.tanggal}')" id="btnView">
-                <img src="/img/icon_detail.svg" alt="Detail">
+                <img src="/img/icon_detail2.svg" alt="Detail">
             </button>
         </div>`;    
 
@@ -127,7 +127,7 @@ window.addEventListener('click', function (e) {
 // Fungsi logout
 logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('loggedInUser'); // hapus data user
-    window.location.href = '/auth/login.html'; // arahkan ke halaman login
+    window.location.href = '../index.html'; // arahkan ke halaman login
 });
 
 document.addEventListener('DOMContentLoaded', () => {

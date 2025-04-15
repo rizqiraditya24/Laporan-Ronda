@@ -8,6 +8,19 @@ body{
     flex-direction: column;
 }
 
+.outputContent button:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background-color: rgb(228, 2, 2);
+}
+
+#btnEdit:hover{
+    background-color: #ee5f00;
+}
+
+#btnView:hover{
+    background-color: #ee9700;
+}
 
 @media (min-width: 1024px) {
     header {
@@ -141,7 +154,7 @@ body{
     }
     
     #btnContainer button img {
-        width: 30%;
+        width: 35%;
     }
 
     .outputContent button{
@@ -160,6 +173,8 @@ body{
     #btnEdit{
         background-color: #FA812F;
     }
+
+    
 
     #btnView{
         background-color: #FAB12F;

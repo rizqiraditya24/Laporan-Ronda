@@ -11,6 +11,12 @@ body {
     padding: 0;
 }
 
+.btnDownload:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background-color: #ee5f00;
+}
+
 @media (min-width: 1024px) {
 
     header{
@@ -122,20 +128,6 @@ body {
     }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-}
-
-
 /* Tampilan hp */
 @media (max-width: 1024px) {
 
@@ -169,6 +161,12 @@ body {
         color: white;
         font-weight: bold;
         border-radius: 5px;
+    }
+
+    header button:hover{
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+        background-color: rgb(228, 2, 2);
     }
 
     .container {
