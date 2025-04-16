@@ -109,12 +109,14 @@ function addData(event) {
         let newData = {
             namaWarga: namaWarga,
             tabungan: tabungan,
+            username: loggedInUser.username, // Simpan username yang login
         };
         warga.push(newData);
     } else {
         warga[editIndex] = {
             namaWarga: namaWarga,
             tabungan: tabungan,
+            username: loggedInUser.username, // Simpan username yang login
         };
         editIndex = null;
     }    

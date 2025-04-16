@@ -83,11 +83,12 @@ body {
 
     .tanggal {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .tanggal p {
-        font-size: 18px;
+        font-size: 17px;
+        margin-bottom: 5px;
     }
 
     .batasAtas{
@@ -188,11 +189,12 @@ body {
 
     .tanggal {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .tanggal p {
-        font-size: 105%;
+        font-size: 103%;
+        margin-bottom: 0.7vh;
     }
 
     .batasAtas{
@@ -208,11 +210,11 @@ body {
         margin-bottom: 1.5vh;
     }
 
-    #dataContainer  h3{
+    #dataContainer h3{
         font-size: 100%;
     }
 
-    #dataContainer  p{
+    #dataContainer p{
         font-size: 80%;
     }
 

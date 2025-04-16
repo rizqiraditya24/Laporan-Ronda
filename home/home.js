@@ -87,16 +87,26 @@ function display() {
 
 function deleteData(index) {
     const tanggalTarget = savedData[index].tanggal;
-    const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus semua data tabungan dengan tanggal ${formatTanggal(tanggalTarget)}?`);
+    const username = loggedInUser.username;
+
+    const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus semua data tabungan Anda pada tanggal ${formatTanggal(tanggalTarget)}?`);
     if (!confirmDelete) return;
 
-    savedData = savedData.filter((item) => item.tanggal !== tanggalTarget);
-    dataWarga = dataWarga.filter((warga) => warga.tanggal !== tanggalTarget);
+    // Hapus hanya dari savedData milik user dan tanggal yang sesuai
+    savedData = savedData.filter((item) =>
+        !(item.tanggal === tanggalTarget && item.username === username)
+    );
+
+    // Hapus dari dataWarga yang memiliki username dan tanggal yang sama
+    dataWarga = dataWarga.filter((warga) =>
+        !(warga.tanggal === tanggalTarget && warga.username === username)
+    );
 
     saveTabungan();
     saveData();
     display();
 }
+
 
 function editData(index) {
     const tanggalTarget = savedData[index].tanggal;
