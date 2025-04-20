@@ -22,7 +22,7 @@ body{
     background-color: #ee9700;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     header {
         width: 100%;
         display: flex;
@@ -82,7 +82,7 @@ body{
         color: white;
         margin-right: 30px;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 21px;
     }
     
     header a:hover {
@@ -154,12 +154,12 @@ body{
     }
     
     #btnContainer button img {
-        width: 35%;
+        width: 32%;
     }
 
     .outputContent button{
         background-color: red;
-        width: 90px;
+        width: 85px;
         border: none;
         color: white;
         font-weight: bold;
@@ -174,8 +174,6 @@ body{
         background-color: #FA812F;
     }
 
-    
-
     #btnView{
         background-color: #FAB12F;
     }
@@ -184,14 +182,53 @@ body{
         display: none;
     }
 
-    .notFound{
-        text-align: center;
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 67vh;
+    }
+
+    .notFoundText{
         font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-inline: 330px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.638);
+    }
+    
+    .btnNotFound {
+        padding: 10px 22px;
+        background-color: #fa802f;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: normal;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+    }
+
+    .btnNotFound:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+        background-color: #fb6c0d;
+    }
+    
+    .big-plus {
+        font-size: 28px;
+        font-weight: bold;
+        margin-right: 6px;
     }
 }
 
 /* Gaya untuk smartphone (layar kecil) */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     header {
         width: 100%;
         position: fixed;
@@ -286,11 +323,6 @@ body{
         outline-color: #FA812F;
         background-color: white;
     }
-
-    .notFound{
-        text-align: center;
-        font-size: 200%;
-    }
     
     #output{
         height: auto;
@@ -370,6 +402,26 @@ body{
     
     .floating-btn:hover {
         background-color: #812b25;
+    }
+
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 67vh;
+    }
+
+    .notFoundText{
+        font-size: 200%;
+        font-weight: bold;
+        margin-inline: 5vw;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.638);
+    }
+    
+    .btnNotFound {
+        display: none;
     }
     
 }

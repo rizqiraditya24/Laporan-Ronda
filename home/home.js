@@ -52,11 +52,27 @@ function display() {
     });
 
     if (filteredData.length === 0) {
-        const h1 = document.createElement('h1');
-        h1.textContent = 'Data tidak ditemukan';
-        h1.classList.add('notFound');
-        outputList.appendChild(h1);
+        const centerContainer = document.createElement('div');
+        centerContainer.classList.add('center-container');
+    
+        const btnNotFound = document.createElement('button');
+        btnNotFound.classList.add('btnNotFound');
+    
+        btnNotFound.innerHTML = '<span class="big-plus">+</span> Tambah Data';
+        btnNotFound.onclick = () => {
+            window.location.href = '/input/input.html';
+        };
+    
+        const notFoundText = document.createElement('h1');
+        notFoundText.textContent = 'Data tidak ditemukan, silahkan tambahkan data!';
+        notFoundText.classList.add('notFoundText');
+
+        centerContainer.appendChild(notFoundText);
+        centerContainer.appendChild(btnNotFound);
+        outputList.appendChild(centerContainer);
     }
+    
+    
 
     filteredData.forEach((data, index) => {
         const listItem = document.createElement('div');
@@ -76,7 +92,7 @@ function display() {
             </button>
 
             <button onclick="viewDetail('${data.tanggal}')" id="btnView">
-                <img src="/img/icon_detail2.svg" alt="Detail">
+                <img src="/img/icon_download2.svg" alt="Detail">
             </button>
         </div>`;    
 
