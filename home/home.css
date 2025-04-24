@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a, button, p, label, input, option{
+    font-family: "Poppins", sans-serif;
+}
+
 * {
     margin: 0%;
     padding: 0%;
@@ -46,9 +57,9 @@ body{
     }
 
     header div img {
-        width: 40px;
-        height: 40px;
-        margin-left: 20px;
+        width: 35px;
+        height: 35px;
+        margin-left: 30px;
         cursor: pointer;
     }
 
@@ -70,6 +81,7 @@ body{
         display: block;
         color: black;
         padding: 5px;
+        font-size: 15px;
     }
     
     .dropdown-content:hover {
@@ -81,8 +93,8 @@ body{
         text-decoration: none;
         color: white;
         margin-right: 30px;
-        font-weight: bold;
-        font-size: 21px;
+        font-weight: 650;
+        font-size: 20px;
     }
     
     header a:hover {
@@ -151,6 +163,15 @@ body{
         justify-content: space-between;
         display: flex;
         flex-direction: row;
+    }
+
+    .outputContent h3{
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .outputContent p{
+        font-size: 15px;
     }
     
     #btnContainer button img {
@@ -245,7 +266,7 @@ body{
     header h2 {
         color: white;
         margin-left: 2vw;
-        font-size: 135%;
+        font-size: 130%;
     }
     
     .nav {
@@ -310,7 +331,7 @@ body{
         outline-color: #FA812F;
         background: url('/img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        font-size: 70%;
+        font-size: 63%;
     }
     
     #filterBulan {
@@ -341,12 +362,12 @@ body{
     }
     
     .outputContent h3{
-        font-size: 100%;
+        font-size: 90%;
         margin-bottom: 0.5vh;
     }
 
     .outputContent p{
-        font-size: 66%;
+        font-size: 60%;
     }
 
     #btnContainer{
