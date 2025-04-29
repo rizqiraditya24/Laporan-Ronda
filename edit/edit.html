@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h2>Edit Data Ronda</h2>
+        <h2>Edit Ronda</h2>
         <div class="nav">
             <a href="/home/home.html" id="navHome">Home</a>
             <a class="navInput">Edit</a>
@@ -43,8 +43,20 @@
             </div>
             <button id="btn-simpan">Simpan</button>
         </div>
-    
-</div>
+    </div>
+
+     <!-- Modal -->
+     <div id="modal" class="modal">
+        <div class="modal-content edit">
+            <h2>Input Tanggal</h2>
+            <label for="modalTanggal">Tanggal:</label>
+            <input type="date" id="modalTanggal" required>
+            <div class="modal-footer">
+                <button id="closeModal">Batal</button>
+                <button id="saveModal">Simpan</button>
+            </div>
+        </div>
+    </div>
 
     <script src="edit.js"></script>
 </body>

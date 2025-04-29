@@ -165,6 +165,7 @@ function display() {
 
     btnTambah.textContent = 'Tambah';
 }
+
 // Fungsi untuk mengedit data
 function editData(index) {
     let editData = warga[index];

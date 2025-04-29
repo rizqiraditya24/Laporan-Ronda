@@ -211,13 +211,10 @@ function editData(index) {
 }
 
 btnSimpan.addEventListener('click', function () {
-    isDataSaved = true;
-    saveData();
-    saveTabungan();
-
-    alert('Data berhasil disimpan!');
-    window.location.href = '/home/home.html';
+    document.getElementById('modalTanggal').value = editTanggal; // isi tanggal di modal
+    document.getElementById('modal').style.display = 'block'; // tampilkan modal
 });
+
 
 search.addEventListener('input', function () {
     displayEditData(this.value.trim().toLowerCase());
@@ -241,6 +238,41 @@ function lockBackButton() {
     history.pushState(null, '', location.href);
     history.pushState(null, '', location.href);
 }
+
+document.getElementById('closeModal').addEventListener('click', function () {
+    document.getElementById('modal').style.display = 'none'; // Tutup modal
+});
+
+document.getElementById('saveModal').addEventListener('click', function () {
+    const newTanggal = document.getElementById('modalTanggal').value;
+
+    if (!newTanggal) {
+        alert('Tanggal tidak boleh kosong!');
+        return;
+    }
+
+    // Update tanggal di semua data filteredWarga
+    dataWarga = dataWarga.map(data => {
+        if (data.tanggal === editTanggal && data.username === loggedInUser.username) {
+            return { ...data, tanggal: newTanggal };
+        }
+        return data;
+    });
+
+    // Update tanggal total tabungan jika ada
+    const indexTotal = savedData.findIndex(data => data.tanggal === editTanggal);
+    if (indexTotal !== -1) {
+        savedData[indexTotal].tanggal = newTanggal;
+    }
+
+    // Simpan dan navigasi
+    saveData();
+    saveTabungan();
+
+    alert('Data berhasil disimpan!');
+    window.location.href = '/home/home.html';
+});
+
 
 lockBackButton();
 
