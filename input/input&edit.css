@@ -69,8 +69,8 @@ a, button, p, label, input, option{
         text-decoration: none;
         color: white;
         margin-right: 30px;
-        font-weight: bold;
-        font-size: 21px;
+        font-weight: 650;
+        font-size: 20px;
     }
     
     header a:hover{
@@ -96,10 +96,10 @@ a, button, p, label, input, option{
     
     .form-input{
         width: 50%;
-        height: 250px;
+        height: 280px;
         display: flex;
         flex-direction: column; 
-        padding: 10px;
+        padding: 15px;
         margin-top: 50px;
         margin-left: 30px;
         border-radius: 10px;
@@ -108,18 +108,24 @@ a, button, p, label, input, option{
     
     .title-input{
         font-weight: bold;
-        margin-bottom:10px;
+        margin-bottom: 20px;
         text-align: center;
+        font-size: 38px;
     }
     
     .input{
         margin-bottom: 20px;
         margin-top: 3px;
-        height: 30px;
+        height: 32px;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
+    }
+
+    .label-input{
+        font-size: 15px;
+        font-weight: 430;
     }
     
     .btn-simpan{
@@ -131,6 +137,7 @@ a, button, p, label, input, option{
         cursor: pointer;
         font-weight: bold;
         margin-top: -10px;
+        font-size: 15px;
     }
     
     .totalTabungan {
@@ -311,14 +318,14 @@ a, button, p, label, input, option{
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 8vh;
+        height: 64px;
         box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
     header h2{
         color: white;
-        padding-left: 4%;
-        font-size: 6.5vw;
+        padding-left: 8px;
+        font-size: 23px;
     }
     
     .nav{
@@ -326,7 +333,7 @@ a, button, p, label, input, option{
     }
 
     header button{
-        margin-right: 2.5vw;
+        margin-right: 8px;
         background-color: #FA4032;
         border: none;
         padding: 8px 12px;
@@ -344,7 +351,7 @@ a, button, p, label, input, option{
     .bodyInput{
         display: flex;
         flex-direction: column;
-        padding-top: 9vh;
+        padding-top: 95px;
     }
     
     .form-input{
@@ -353,28 +360,28 @@ a, button, p, label, input, option{
         margin: auto;
         display: flex;
         flex-direction: column; 
-        padding: 3%;
-        margin-top: 3vh;
+        padding: 15px;
         border-radius: 10px;
         border: 2px solid #FA4032;
     }
     
     .title-input{
         font-weight: bold;
-        margin-bottom: 1vh;
-        font-size: 160%;
+        margin-bottom: 15px;
+        font-size: 28px;
         text-align: center;
     }
     
     .label-input{
-        font-size: 80%;
+        font-size: 13px;
+        font-weight: 450;
     }
 
     .input{
-        margin-bottom: 2vh;
-        margin-top: 0.5vh;
-        height: 2.5vh;
-        padding: 2.5%;
+        margin-bottom: 13px;
+        margin-top: 3px;
+        height: 42px;
+        padding-inline: 10px;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
@@ -385,13 +392,11 @@ a, button, p, label, input, option{
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 2.5%;
+        padding: 8px;
         cursor: pointer;
         font-weight: bold;
-        margin-top: -1vh;
+        margin-top: -5px;
     }
-    
-    
     
     .totalTabungan {
         position: fixed;
@@ -401,54 +406,54 @@ a, button, p, label, input, option{
         display: flex;
         flex-direction: row;
         background-color: #FA812F;
-        padding: 3%;
+        padding: 10px;
         justify-content: space-between;
         align-items: center;
     }
     
     .totalTabungan button{
-        width: 20vw;
-        height: 5vh;
+        width: 80px;
+        height: 45px;
         color: white;
         background-color: #FA4032;
         border: none;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 6vw;
-    }
-
-    .totalTabungan h1{
-        font-size: 170%;
+        margin-right: 20px;
     }
 
     .totalTabungan p{
-        font-size: 80%;
+        font-size: 15px;
     }
 
-    .grupOutput{
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 10vh;
+    .totalTabungan h1{
+        font-size: 28px;
     }
-    
+
     .search{
-        width: 68%;
-        height: 5vh;
-        padding-inline: 11vw;
+        width: 70%;
+        height: 40px;
+        padding-inline: 40px;
         border-radius: 5px;
         margin-inline: auto;
         border: 1px solid rgba(0, 0, 0, 0.481);
         outline-color: #FA812F;
         background: url('/img/icon_search.svg') no-repeat 10px center;
         background-size: 20px 20px;
-        margin-bottom: 2vh;
-        margin-top: 3vh;
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+    
+    .grupOutput{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 80px;
     }
     
     #output {
         height: auto;
-        width: 90%;
+        width: 92%;
         margin-inline: auto;
     }
     
@@ -456,9 +461,9 @@ a, button, p, label, input, option{
         display: flex;
         flex-direction: row;
         border: 1px solid #FA812F;
-        padding: 4.5%;
+        padding: 13px;
         border-radius: 10px;
-        margin-bottom: 1vh;
+        margin-bottom: 10px;
         align-items: center;
     }
     
@@ -467,12 +472,12 @@ a, button, p, label, input, option{
     }
 
     .listText h3{
-        font-size: 80%;
-        margin-bottom: 0.5vh;
+        font-size: 15px;
+        margin-bottom: 3px;
     }
 
     .listText p{
-        font-size: 65%;
+        font-size: 10px;
     }
     
     .btnContainer{
@@ -481,20 +486,20 @@ a, button, p, label, input, option{
     }
 
     .btnContainer button{
-        width: 14vw;
-        height: 4.5vh;
+        width: 55px;
+        height: 35px;
         background-color: red;
         border: none;
         color: white;
         font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 80%;
+        font-size: 13px;
     }
 
     #editButton{
         background-color: #FA812F;
-        margin-right: 3vw;
+        margin-right: 10px;
     }
     
     /* Modal styling */
@@ -505,18 +510,24 @@ a, button, p, label, input, option{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.637);
+        z-index: 1000;
         align-items: center;
+        justify-content: center;
     }
     
     .modal-content {
+        margin: auto;
         background-color: white;
         padding: 20px;
         border-radius: 8px;
-        width: 60%;
+        width: 250px;
         display: flex;
         flex-direction: column;
+    }
+
+    .modal-content.edit{
+        margin-top: 16rem;
     }
     
     .modal-content h2 {
@@ -526,13 +537,12 @@ a, button, p, label, input, option{
     }
     
     .modal-content input {
-        width: 95%;
-        margin-top: 5px;
+        margin-top: 3px;
         height: 30px;
         padding: 5px;
         border: 1px solid rgba(0, 0, 0, 0.421);
         outline-color: #FA812F;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         border-radius: 5px;
     }
     

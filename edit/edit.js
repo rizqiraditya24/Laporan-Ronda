@@ -8,6 +8,7 @@ const btnTambah = document.getElementById('btn-tambah');
 const btnSimpan = document.getElementById('btn-simpan');
 const navHome = document.getElementById('navHome');
 const search = document.getElementById('searchInput');
+const btnBack = document.getElementById('btn-back');
 
 let editIndex = null;
 let isDataSaved = true;
@@ -96,14 +97,15 @@ function addData(event) {
         return;
     }
 
-    let isDuplicate = filteredWarga.some((data, index) =>
-        data.namaWarga.toLowerCase() === namaWarga.toLowerCase() && index !== editIndex
-    );
-
-    if (isDuplicate) {
+    let isDuplicate = filteredWarga.some((data, index) => {
+        return data.namaWarga.toLowerCase() === namaWarga.toLowerCase() && index !== editIndex;
+    });
+    
+    if (editIndex === null && isDuplicate) {
         alert('Nama warga sudah ada dalam daftar! Harap masukkan nama yang berbeda.');
         return;
     }
+    
 
     if (editIndex === null) {
         let newData = {
@@ -132,6 +134,7 @@ function addData(event) {
     saveData();
     calculateTotalTabungan(true);
     displayEditData();
+    isDataSaved = false;
 
     inputNamaWarga.value = '';
     inputTabungan.value = '';
@@ -154,6 +157,7 @@ function deleteData(index) {
     isDataSaved = false;
     calculateTotalTabungan(true);
     displayEditData();
+    isDataSaved = false;
 }
 
 function displayEditData(searchQuery = '') {
@@ -208,6 +212,7 @@ function editData(index) {
 
     inputNamaWarga.focus();
     btnTambah.textContent = 'Edit';
+    isDataSaved = false;
 }
 
 btnSimpan.addEventListener('click', function () {
@@ -221,6 +226,13 @@ search.addEventListener('input', function () {
 });
 
 navHome.addEventListener('click', (event) => {
+    if (!isDataSaved) {
+        alert('Data belum disimpan! Harap simpan data terlebih dahulu.');
+        event.preventDefault();
+    }
+});
+
+btnBack.addEventListener('click', (event) => {
     if (!isDataSaved) {
         alert('Data belum disimpan! Harap simpan data terlebih dahulu.');
         event.preventDefault();
@@ -268,10 +280,12 @@ document.getElementById('saveModal').addEventListener('click', function () {
     // Simpan dan navigasi
     saveData();
     saveTabungan();
+    isDataSaved = true; // ✅ Tandai sebagai sudah disimpan
 
     alert('Data berhasil disimpan!');
     window.location.href = '/home/home.html';
 });
+
 
 
 lockBackButton();

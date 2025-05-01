@@ -423,18 +423,14 @@ body{
         background-color: #812b25;
     }
 
-    .center-container {
+    .center-container{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        height: 536px; /* 67vh */
     }
-
     .notFoundText {
-        font-size: 32px; /* 200% */
+        width: 92%;
+        font-size: 23px; /* 200% */
         font-weight: bold;
-        margin-inline: 19px; /* 5vw */
         text-align: center;
         color: rgba(0, 0, 0, 0.638);
     }

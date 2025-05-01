@@ -154,7 +154,7 @@ body {
 /* Tampilan hp */
 @media (max-width: 768px) {
 
-    header{
+    header {
         width: 100%;
         position: fixed;
         display: flex;
@@ -162,22 +162,22 @@ body {
         align-items: center;
         background-color: #FA812F;
         justify-content: space-between;
-        height: 8vh;
+        height: 60px; /* 8vh -> px */
         box-shadow: 1px 9px 7px 0px rgba(0, 0, 0, 0.136);
     }
     
-    header h2{
+    header h2 {
         color: white;
-        padding-left: 4%;
-        font-size: 6.5vw;
+        padding-left: 16px; /* 4% -> px */
+        font-size: 23px; /* 6.5vw -> px */
     }
     
-    .nav{
+    .nav {
         display: none;
     }
 
-    header button{
-        margin-right: 2.5vw;
+    header button {
+        margin-right: 8px;
         background-color: #FA4032;
         border: none;
         padding: 8px 12px;
@@ -186,27 +186,27 @@ body {
         border-radius: 5px;
     }
 
-    header button:hover{
+    header button:hover {
         transform: scale(1.05);
         transition: all 0.3s ease;
         background-color: rgb(228, 2, 2);
     }
 
     .container {
-        width: 80%;
+        width: 80%; /* 80% -> px */
         margin: auto;
-        padding: 5%;
+        padding: 20px; /* 5% -> px */
         background-color: white;
         border: 1px solid #FA812F;
         border-radius: 8px;
-        margin-top: 12vh;
+        margin-top: 96px; /* 12vh -> px */
     }
 
     .container h1 {
         text-align: center;
         color: #FA812F;
-        font-size: 210%;
-        margin-bottom: 4vh;
+        font-size: 35px; /* 210% -> px */
+        margin-bottom: 20px; /* 4vh -> px */
     }
 
     .tanggal {
@@ -215,35 +215,35 @@ body {
     }
 
     .tanggal p {
-        font-size: 103%;
-        margin-bottom: 0.7vh;
+        font-size: 17px; /* 103% -> px */
+        margin-bottom: 5px; /* 0.7vh -> px */
     }
 
-    .batasAtas{
+    .batasAtas {
         border: 1px solid black;
-        margin-bottom: 3vh;
-        margin-top: 1vh;
+        margin-bottom: 24px; /* 3vh -> px */
+        margin-top: 8px; /* 1vh -> px */
     }
 
     #dataContainer div {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 1.5vh;
+        margin-bottom: 12px; /* 1.5vh -> px */
     }
 
-    #dataContainer h3{
-        font-size: 100%;
+    #dataContainer h3 {
+        font-size: 16px; /* 100% -> px */
     }
 
-    #dataContainer p{
-        font-size: 80%;
+    #dataContainer p {
+        font-size: 13px; /* 80% -> px */
     }
 
-    .batasBawah{
+    .batasBawah {
         border: 1px solid black;
-        margin-top: 3vh;
-        margin-bottom: 1vh;
+        margin-top: 24px; /* 3vh -> px */
+        margin-bottom: 8px; /* 1vh -> px */
     }
 
     .totalTabunganContainer {
@@ -252,30 +252,30 @@ body {
         justify-content: space-between;
     }
 
-    .totalTabunganContainer h2{
-        font-size: 120%;
+    .totalTabunganContainer h2 {
+        font-size: 19px; /* 120% -> px */
     }
 
     .btnDownload {
-        width: 50vw ;
+        width: 240px; /* 50vw -> px */
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-top: 30px; /* 5vh -> px */
+        margin-bottom: 40px; /* 5vh -> px */
         background-color: #FA812F;
         color: white;
         border: none;
-        padding: 4%;
+        padding: 15px; /* 4% -> px */
         border-radius: 10px;
         font-weight: bold;
         cursor: pointer;
-        gap: 3vw;
-        font-size: 70%;
+        gap: 12px; /* 3vw -> px */
+        font-size: 14px; /* 70% -> px */
     }
     
-    img{
-        width: 15%;
+    img {
+        width: 40px; /* 15% -> px */
     }
 }
