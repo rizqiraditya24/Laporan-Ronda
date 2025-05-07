@@ -32,14 +32,13 @@ function registerUser(event) {
     const newUser = { username: usernameRegis, password: passwordRegis };
     users.push(newUser);
     saveUsers();
-    saveLoggedInUser(newUser); // Simpan user yang sedang login
 
-    alert('Registrasi berhasil!');
+    alert('Registrasi berhasil, silahkan login!');
     document.getElementById('usernameRegis').value = '';
     document.getElementById('passwordRegis').value = '';
 
     // Redirect ke halaman home
-    window.location.href = '/home/home.html';
+    window.location.href = 'login.html';
 }
 
 
