@@ -121,6 +121,7 @@ function deleteData(index) {
     saveTabungan();
     saveData();
     display();
+    updateTotalKeseluruhan();
 }
 
 
@@ -164,5 +165,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function updateTotalKeseluruhan() {
+    const total = savedData
+        .filter(data => data.username === loggedInUser.username)
+        .reduce((sum, item) => sum + parseInt(item.totalTabungan, 10), 0);
+
+    const totalDisplay = document.getElementById('totalKeseluruhan');
+    totalDisplay.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+}
+
+
 
 display();
+updateTotalKeseluruhan();
