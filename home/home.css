@@ -246,6 +246,10 @@ body{
         font-weight: bold;
         margin-right: 6px;
     }
+
+    .container-total-keseluruhan a{
+        display: none;
+    }
 }
 
 /* Gaya untuk smartphone (layar kecil) */
@@ -323,6 +327,28 @@ body{
         margin-bottom: 24px; /* 3vh */
         gap: 8px; /* 2vw */
     }
+
+    .container-total-keseluruhan{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #FA812F;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container-total-keseluruhan a{
+        background-color: #FA4032;
+        color: #f1f1f1;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
     
     .search {
         width: 170px; /* 45vw */
@@ -348,6 +374,9 @@ body{
         background-color: white;
     }
     
+    #output{
+        margin-bottom: 60px;
+    }
     .outputContent {
         width: 295px; /* 80% */
         border: 1px solid #FA812F;
@@ -438,5 +467,4 @@ body{
     .btnNotFound {
         display: none;
     }
-    
 }
